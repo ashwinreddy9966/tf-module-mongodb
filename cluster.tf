@@ -4,7 +4,7 @@ resource "aws_docdb_cluster" "docdb" {
   master_username         = "admin1"
   master_password         = "roboshop1"
   skip_final_snapshot     = true
-  db_subnet_group_name    =
+  db_subnet_group_name    = aws_docdb_subnet_group.docdb.name
 }
 
 resource "aws_docdb_subnet_group" "docdb" {
