@@ -31,7 +31,7 @@ resource "aws_security_group" "allow_mongodb" {
   ingress {
     description = "TLS from VPC"
     from_port   = 27017
-    to_port     = var.DOCUMENTDB_PORT
+    to_port     = 27017
     protocol    = "tcp"
     cidr_blocks = [data.terraform_remote_state.vpc.outputs.VPC_CIDR, var.WORKSTATION_IP]
   }
