@@ -18,7 +18,7 @@ resource "aws_docdb_subnet_group" "docdb" {
  }
 
 resource "aws_docdb_cluster_instance" "cluster_instances" {
-  count              = variable.DOCUMENTDB_INSTANCE_COUNT
+  count              = var.DOCUMENTDB_INSTANCE_COUNT
   identifier         = "roboshop-${var.ENV}"
   cluster_identifier = aws_docdb_cluster.docdb.id
   instance_class     = var.DOCUMENTDB_INSTANCE_CLASS
