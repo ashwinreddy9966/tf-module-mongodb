@@ -11,10 +11,10 @@ data "aws_secretsmanager_secret" "secret" {
   name = "${var.ENV}/roboshop/secrets"
 }
 
-data "aws_secretsmanager_secret_version" "secret-version" {
-  secret_id = data.aws_secretsmanager_secret.example.id
+data "aws_secretsmanager_secret_version" "secrets" {
+  secret_id = data.aws_secretsmanager_secret.secret.id
 }
 
 output "data" {
-  value = data.aws_secretsmanager_secret.secret
+  value = data.aws_secretsmanager_secret_version.secrets
 }
