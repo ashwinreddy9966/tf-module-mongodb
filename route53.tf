@@ -3,5 +3,5 @@ resource "aws_route53_record" "record" {
   name    = ""
   type    = "CNAME"
   ttl     = "300"
-  records = [aws_docdb_cluster.docdb.address]
+  records = [aws_docdb_cluster.docdb.endpoint]
 }
