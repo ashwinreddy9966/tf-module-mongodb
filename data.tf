@@ -19,6 +19,6 @@ data "aws_secretsmanager_secret_version" "secrets" {
 #  value = data.aws_secretsmanager_secret_version.secrets
 #}
 
-output "data" {
-  value = jsondecode(data.aws_secretsmanager_secret_version.secrets.secret_string)["DOCUMENTDB_MASTER_USERNAME"]
-}
+#output "data" {
+#  value = jsondecode(data.aws_secretsmanager_secret_version.secrets.secret_string)["DOCUMENTDB_MASTER_USERNAME"]
+#}
