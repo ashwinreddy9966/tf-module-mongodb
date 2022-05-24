@@ -21,7 +21,7 @@ resource "aws_docdb_cluster_instance" "cluster_instances" {
   count              = variable.DCOUMENTDB_PORT
   identifier         = "roboshop-${var.ENV}"
   cluster_identifier = aws_docdb_cluster.docdb.id
-  instance_class     = "db.t3.medium"
+  instance_class     = var.DCOUMENTDB_INSTANCE_CLASS
 }
 
 resource "aws_security_group" "allow_mongodb" {
