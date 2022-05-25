@@ -1,5 +1,5 @@
 locals {
   DNS_NAME = "mongodb-${var.ENV}.${data.terraform_remote_state.vpc.outputs.HOSTEDZONE_PRIVATE_ZONE}"
-  USERNAME =
-  PASSWORD =
+  USERNAME = "jsondecode(data.aws_secretsmanager_secret_version.secrets.secret_string)["RDS_MYSQL_USERNAME"]"
+  PASSWORD = "jsondecode(data.aws_secretsmanager_secret_version.secrets.secret_string)["RDS_MYSQL_USERNAME"]"
 }
