@@ -8,10 +8,6 @@ resource "aws_docdb_cluster" "docdb" {
   vpc_security_group_ids  = [aws_security_group.allow_mongodb.id]
 }
 
-outputs "MONGODB_EBDPOINT" {
-  values = aws_docdb_cluster.docdb.endpoint
-}
-
 resource "aws_docdb_subnet_group" "docdb" {
   name       = "roboshop-${var.ENV}"
   subnet_ids = data.terraform_remote_state.vpc.outputs.PRIVATE_SUBNET_IDS
