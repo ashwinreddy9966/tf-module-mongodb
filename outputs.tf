@@ -1,3 +1,3 @@
-outputs "MONGODB_ENDPOINT" {
+output "MONGODB_ENDPOINT" {
   values = aws_docdb_cluster.docdb.endpoint
 }
